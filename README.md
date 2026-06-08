@@ -312,7 +312,11 @@ uniform distribution. For a Sobol sequence of $N$ points in $d$ dimensions:
 $$D_N^* \sim \frac{(\log N)^d}{N}$$
 
 compared to $D_N^* \sim N^{-1/2}$ for pseudo-random Monte Carlo and
-$D_N^* \sim N^{-1/d}$ for a regular grid. The practical consequence is that
+$D_N^* \sim N^{-1/d}$ for a regular grid. 
+
+
+
+The practical consequence is that
 the Sobol sequence achieves the same coverage uniformity as a grid but with
 **exponentially fewer points** in high dimensions.
 
