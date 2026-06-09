@@ -1,0 +1,36 @@
+# Configuration Template for Stability Region Mapper
+# 
+# Copy this file and fill in your specific values, then use it with:
+#   python tpm_stability_map.py --config your_config.yaml
+
+# Path to your Cobaya YAML configuration file
+# This file should contain the full CAMB/EFTCAMB theory specification
+cobaya_yaml: /path/to/your/config.yaml
+
+# Parameter ranges for sampling
+# Format: parameter_name: [lower_bound, upper_bound]
+# These define the region of parameter space to explore
+tpm_ranges:
+  Log_aT: [-7.5, -3.5]    # log10(a_T)
+  sig:    [0.4, 3.0]      # sigma (Gaussian width)
+  M:      [-0.15, 0.015]  # Omega_0
+  c:      [-0.1, 0.01]    # c_0
+
+# Fixed parameters (pinned at center of ref distributions)
+# These parameters are evaluated but not varied during sampling
+tpm_fixed:
+  ombh2: 0.0224   # Omega_b h^2
+  omch2: 0.118    # Omega_c h^2
+  tau:   0.055    # Optical depth
+  logA:  3.05     # log(A_s)
+  ns:    0.965    # Scalar spectral index
+  H0:    72.0     # Hubble parameter (km/s/Mpc)
+
+# Optional: training configuration for neural network
+# These are used by Stability_nn.py if needed
+nn_config:
+  hidden_dims: [64, 64, 32]
+  epochs: 1000
+  learning_rate: 0.001
+  batch_size: 32
+  validation_split: 0.2
