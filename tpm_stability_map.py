@@ -59,7 +59,7 @@ from scipy.stats import qmc
 # Path to the user's Cobaya YAML, used as the source of truth for the theory block
 
 
-DEFAULT_YAML = "/home/lbaldazzi/Documents/Dottorato/Scripts/yaml_eftcamb/TPM.yaml"
+DEFAULT_YAML = "your_yaml.yaml"
 
 # TPM parameter ranges, taken from the YAML prior blocks 
 
@@ -357,7 +357,7 @@ def main():
                     help="Number of parallel workers (default: ncpu-1)")
     ap.add_argument("--seed", type=int, default=42,
                     help="Sobol seed (default: %(default)s)")
-    ap.add_argument("--output", default="/home/lbaldazzi/Documents/Dottorato/Scripts/Stability_regions/Sobol_sampling/TPM/tpm_stability_map.pkl",
+    ap.add_argument("--output", default="./tpm_stability_map.pkl",
                     help="Output pickle file (default: %(default)s)")
     ap.add_argument("--serial", action="store_true",
                     help="Run serially (useful for debugging)")
